@@ -128,3 +128,137 @@ length = float(input())
 width = float(input())
 height = float(input())
 print(f'Volume for {length} {width} {height} is: {calc_pyramid_volume(length, width, height):.2f}')
+
+###############
+def compute(numbers):
+    result = 1
+    for num in numbers:
+        result *= num + 2
+    return result
+
+values = [6, 4, 5]
+computed_value = compute(values)
+print(computed_value)
+
+#######################
+values = [15, 9, 5, 3, 12, 10]
+
+def print_selected_numbers():
+    for number in values:
+        if number > 5:
+            print(number)
+
+print_selected_numbers()
+
+functions w/ branches/loops
+def print_popcorn_time(bag_ounces):
+    if bag_ounces < 3:
+        print("Too small")
+    elif bag_ounces > 10:
+        print("Too large")
+    else: print(6 * bag_ounces, "seconds")
+
+user_ounces = int(input())
+print_popcorn_time(user_ounces)
+
+
+#many many loopies
+def print_shampoo_instructions(num_cycles):
+    if num_cycles < 1:
+        print("Too few.")
+    if num_cycles > 4:
+        print("Too many.")
+    else:
+        for i in range(num_cycles):
+            print(f'{i+1}: Lather and rinse.')
+        if num_cycles >= 1:
+            print("Done.")
+    
+        
+user_cycles = int(input())
+print_shampoo_instructions(user_cycles)
+
+get user num and computer avg
+def get_user_num():
+    print('FIXME: Finish get_user_num()')
+    return -1
+    
+def compute_avg(user_num1, user_num2):
+    print('FIXME: Finish compute_avg()')
+    return -1
+
+user_num1 = 0
+user_num2 = 0
+avg_result = 0
+
+user_num1 = get_user_num()
+user_num2 = get_user_num()
+avg_result = compute_avg(user_num1, user_num2)
+
+print(f'Avg: {avg_result}')
+
+# swap the first and last element of a lsit
+def swap(a):
+    new1 = a[0]
+    a[0] = a[-1]
+    a[-1] = new1
+    return a
+    
+values_list = input().split(',')  # Program receives comma-separated values like 5,4,12,19
+swap(values_list)
+
+print(values_list)
+
+dollars to pennies
+def number_of_pennies(dollars, pennies=0):
+    num_dollars = dollars * 100
+    total = num_dollars + pennies
+    return total
+
+print(number_of_pennies(int(input()), int(input()))) # Both dollars and pennies
+print(number_of_pennies(int(input())))               # Dollars only
+
+############################
+# Splitting a check!
+# FIXME: Write the split_check function. HINT: Calculate the amount of tip and tax,
+# add to the bill total, then divide by the number of diners.
+
+def split_check(bill, people, tax_percentage = 0.15, tip_percentage = 0.09):
+    tip_tax = (bill * tax_percentage) + (bill * tip_percentage)
+    bill_total = bill + tip_tax
+    cost_per_diner = bill_total /people
+    return cost_per_diner
+
+bill = float(input())
+people = int(input())
+
+# Cost per diner at the default tax and tip percentages
+print(f'Cost per diner: ${split_check(bill, people):.2f}')
+
+bill = float(input())
+people = int(input())
+new_tax_percentage = float(input())
+new_tip_percentage = float(input())
+
+# Cost per diner at different tax and tip percentages
+print(f'Cost per diner: ${split_check(bill, people, new_tax_percentage, new_tip_percentage):.2f}')
+
+#################
+Compute Gas volume
+gas_const = 8.3144621
+
+def compute_gas_volume(pressure, temperature, moles):
+    gas_equation_volume = (moles * gas_const * temperature) / pressure
+    return gas_equation_volume
+
+gas_pressure = float(input())
+gas_moles = float(input())
+gas_temperature = float(input())
+gas_volume = 0.0
+
+gas_volume = compute_gas_volume(gas_pressure, gas_temperature, gas_moles)
+print(f'Gas volume: {gas_volume} m^3')
+
+#########################
+String Slicing
+#######################
